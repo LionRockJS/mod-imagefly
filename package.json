@@ -1,0 +1,40 @@
+{
+  "type": "module",
+  "name": "@lionrockjs/mod-imagefly",
+  "version": "0.0.1",
+  "description": "The Imagefly module for LionRockJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules ../../../node_modules/jest/bin/jest.js --coverage"
+  },
+  "jest": {
+    "verbose": true,
+    "transform": {},
+    "testMatch": [
+      "**/__tests__/**/*.[jt]s?(x)",
+      "**/?(*.)+(spec|test).[jt]s?(x)",
+      "**/?(*.)+(spec|test).mjs"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "mjs"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LionRockJS/mod-imagefly.git"
+  },
+  "keywords": [
+    "KohanaJS"
+  ],
+  "author": "Kojin Nakana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LionRockJS/mod-imagefly/issues"
+  },
+  "homepage": "https://github.com/LionRockJS/mod-imagefly#readme",
+  "dependencies": {
+    "sharp": "^0.33.4"
+  }
+}
