@@ -1,8 +1,7 @@
 import {stat, mkdir} from 'node:fs/promises';
 import path from 'node:path';
-import {Controller} from "@lionrockjs/mvc";
 import sharp from 'sharp';
-import {ControllerMixinMime, ControllerMixinView, Central} from "@lionrockjs/central";
+import {ControllerMixinMime, ControllerMixinView, Controller, Central} from "@lionrockjs/central";
 
 export default class ControllerImageFly extends Controller{
   static mixins = [...Controller.mixins, ControllerMixinMime, ControllerMixinView];
@@ -10,8 +9,8 @@ export default class ControllerImageFly extends Controller{
   async action_index(){
     const {options, "*": source} = this.request.params;
     const resultFile = '/media/cache/'+options+'/'+source;
-    const targetFile = path.normalize(KohanaJS.APP_PATH+'/../public'+resultFile);
-    const sourceFile = path.normalize(KohanaJS.APP_PATH+'/../public/'+ source);
+    const targetFile = path.normalize(Central.APP_PATH+'/../public'+resultFile);
+    const sourceFile = path.normalize(Central.APP_PATH+'/../public/'+ source);
     //check target file exist;
     try{
       const exist = await stat(targetFile);

@@ -26,7 +26,7 @@
     "url": "git+https://github.com/LionRockJS/mod-imagefly.git"
   },
   "keywords": [
-    "KohanaJS"
+    "LionrockJS"
   ],
   "author": "Kojin Nakana",
   "license": "MIT",
@@ -35,6 +35,6 @@
   },
   "homepage": "https://github.com/LionRockJS/mod-imagefly#readme",
   "dependencies": {
-    "sharp": "^0.33.4"
+    "sharp": "^0.33.5"
   }
 }
