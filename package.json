@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "@lionrockjs/mod-imagefly",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The Imagefly module for LionRockJS",
   "main": "index.js",
   "scripts": {
