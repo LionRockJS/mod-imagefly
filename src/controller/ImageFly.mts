@@ -5,7 +5,11 @@ import {ControllerMixinMime, ControllerMixinView, Controller, Central} from "@li
 
 export default class ControllerImageFly extends Controller{
   static mixins = [...Controller.mixins, ControllerMixinMime, ControllerMixinView];
-
+ 
+  get request() {
+    return this.state.get(ControllerState.REQUEST);
+  }
+ 
   async action_index(){
     const {options, "*": source} = this.request.params;
     const resultFile = '/media/cache/'+options+'/'+source;
@@ -36,16 +40,16 @@ export default class ControllerImageFly extends Controller{
     const strategy = options.match(/[^-](entropy|attention)[$-]/i);
 
     if(!width && !height)throw new Error('Please specify width or height');
-
-    const resizeOption = {};
+ 
+    const resizeOption: any = {};
     if(width)resizeOption.width = parseInt(width[1]);
     if(height)resizeOption.height = parseInt(height[1]);
-    if(fit)resizeOption.fit = sharp.fit[fit[1]];
+    if(fit)resizeOption.fit = (sharp as any).fit[fit[1]];
     if(position || gravity || strategy){
       resizeOption.position =
-        position ? sharp.position[position[1]] :
-        gravity ? sharp.gravity[gravity[1]] :
-        strategy ? sharp.strategy[strategy[1]] : null;
+        position ? (sharp as any).position[position[1]] :
+        gravity ? (sharp as any).gravity[gravity[1]] :
+        strategy ? (sharp as any).strategy[strategy[1]] : null;
     }
 
     const targetDirectory = path.dirname(targetFile);

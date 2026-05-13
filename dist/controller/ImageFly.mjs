@@ -4,6 +4,9 @@ import sharp from 'sharp';
 import { ControllerMixinMime, ControllerMixinView, Controller, Central } from "@lionrockjs/central";
 export default class ControllerImageFly extends Controller {
     static mixins = [...Controller.mixins, ControllerMixinMime, ControllerMixinView];
+    get request() {
+        return this.state.get(ControllerState.REQUEST);
+    }
     async action_index() {
         const { options, "*": source } = this.request.params;
         const resultFile = '/media/cache/' + options + '/' + source;

@@ -4,13 +4,17 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "declaration": true,
-    "rootDir": "src",
     "outDir": "dist",
-    "declarationDir": "types",
     "strict": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@lionrockjs/central": ["../../../system/central/src/index.ts"],
+      "@lionrockjs/router": ["../../../system/router/src/index.ts"],
+      "@lionrockjs/mvc": ["../../../system/mvc/src/index.ts"]
+    }
   },
   "include": [
     "src/**/*.ts",
