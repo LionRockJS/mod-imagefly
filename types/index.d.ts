@@ -3,5 +3,5 @@ declare const _default: {
     configs: any[];
 };
 export default _default;
-import ControllerImageFly from './controller/ImageFly';
+import ControllerImageFly from './controller/ImageFly.mjs';
 export { ControllerImageFly };

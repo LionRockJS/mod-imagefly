@@ -3,7 +3,7 @@ export default {
   configs: []
 }
 
-import ControllerImageFly from './controller/ImageFly';
+import ControllerImageFly from './controller/ImageFly.mjs';
 
 export {
   ControllerImageFly

@@ -1,7 +1,7 @@
 import { stat, mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import sharp from 'sharp';
-import { ControllerMixinMime, ControllerMixinView, Controller, Central } from "@lionrockjs/central";
+import { ControllerMixinMime, ControllerMixinView, Controller, Central, ControllerState } from "@lionrockjs/central";
 export default class ControllerImageFly extends Controller {
     static mixins = [...Controller.mixins, ControllerMixinMime, ControllerMixinView];
     get request() {
